@@ -1,26 +1,20 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# ionic-3-geolocation-app: Ionic 3 Geolocation App
+Using Ionic 3 to build an app that utilize the GPS module of the phone.
+This repo was referred and modified from [Ionic 2 & 3: How to Use Google Maps & Geolocation](https://www.joshmorony.com/ionic-2-how-to-use-google-maps-geolocation-video-tutorial/)
 
-## How to use this template
+Created by: Pinetop Technology
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/driftyco/ionic2-app-base).
+<img width="600px" height="500px" src="http://www.pinetoptechno.com.my/wp-content/uploads/2017/05/geolocation-app.jpg" />
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/driftyco/ionic2-app-base).
+In order to run this, following steps are required.
 
-### With the Ionic CLI:
+Run `npm install`
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+Run `ionic serve`
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+It will launch a browser for you, however this thing is only work in the phone.
+So it is required to link it to the Ionic View.
 
-Then, to run it, cd into `myBlank` and run:
+If you have linked your Ionic to Ionic View, just run `ionic upload` else you need to login and link to the Ionic View account by `ionic login` and `ionic link`.
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+Please share with us if you encounter any problem.
