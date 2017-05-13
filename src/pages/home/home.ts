@@ -11,10 +11,15 @@ declare var google;
 export class HomePage {
 
  latLng: any;
+
   @ViewChild('map') mapElement: ElementRef;
    map: any;
 
+
+
   constructor(private geolocation: Geolocation) {
+    this.latLng = new google.maps.LatLng(2.9427466,101.8737259);
+
   }
 
   ionViewDidLoad(){
@@ -23,7 +28,6 @@ export class HomePage {
 
   loadMap(){
 
-       this.latLng = new google.maps.LatLng(2.9427466,101.8737259);
 
       let mapOptions = {
         center: this.latLng,
@@ -32,6 +36,8 @@ export class HomePage {
       }
 
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+
 
     }
 
@@ -50,26 +56,22 @@ export class HomePage {
 
        this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
+       let marker = new google.maps.Marker({
+         map: this.map,
+         animation: google.maps.Animation.DROP,
+         position: this.latLng
+       });
+
+       let content = "<h4>Current Location</h4>";
+
+       this.addInfoWindow(marker, content);
+
+
+
     }).catch((error) => {
       console.log('Error getting location', error);
     });
 
-    let marker = new google.maps.Marker({
-      map: this.map,
-      animation: google.maps.Animation.DROP,
-      position: this.latLng
-    });
-
-    let content = "<h4>Current Location</h4>";
-
-    this.addInfoWindow(marker, content);
-
-    let watch = this.geolocation.watchPosition();
-    watch.subscribe((data) => {
-     // data can be a set of coordinates, or an error (if an error occurred).
-     // data.coords.latitude
-     // data.coords.longitude
-    });
 
   }
 
@@ -84,5 +86,6 @@ export class HomePage {
   });
 
 }
+
 
 }
